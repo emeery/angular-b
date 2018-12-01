@@ -1,0 +1,28 @@
+<!-- <input type="text"
+  class="form-control"
+  (input)="onActualizaServidor($event)"
+> -->
+<button
+      type="button"
+      class="btn btn-info"
+      [disabled]="!newServidor"
+      (click)="onCrearServidor()"
+>Add Servidor</button>
+<br><br>
+<input type="text"
+  class="form-control"
+  [(ngModel)]="servidorNombre"
+> 
+<p
+*ngIf="servidorCreado">
+Servidor {{servidorNombre}} ha sido creado
+</p>
+
+<h3
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}"
+>
+  {{ 'Servidor'}} con id: {{getServidorStatus()}}
+</h3>
+<app-servidor *ngFor="let serve of servidores">
+</app-servidor>

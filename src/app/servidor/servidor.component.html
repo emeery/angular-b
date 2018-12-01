@@ -1,0 +1,11 @@
+<div>
+<button class="btn btn-primary" (click)="onVisible()">Detalles</button>
+<p 
+*ngIf="visible"
+>Contraseña = tuna</p>
+<div 
+*ngFor="let item of log"
+[ngStyle]="{backgroundColor: item >= 5 ? 'blue' : 'transparent  '}"
+[ngClass]="{'color-blanco': item >= 5}"
+>{{ item }}</div>
+</div>
